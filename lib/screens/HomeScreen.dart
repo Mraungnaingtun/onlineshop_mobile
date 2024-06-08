@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:onlineshopping/model/Product.dart';
+import 'package:onlineshopping/screens/ProductDetailsPage.dart';
+import 'package:onlineshopping/widgets/CarouselSliderWidget.dart';
 import 'package:onlineshopping/widgets/CusAppBar.dart';
 import 'package:onlineshopping/widgets/ProductItem.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -49,6 +51,21 @@ class _HomeScreenState extends State<HomeScreen> {
       price: 29.99,
       photoPath: "assets/images/sneaker.png",
     ),
+    Product(
+      name: "Product 8",
+      price: 29.99,
+      photoPath: "assets/images/sneaker.png",
+    ),
+    Product(
+      name: "Product 9",
+      price: 29.99,
+      photoPath: "assets/images/sneaker.png",
+    ),
+    Product(
+      name: "Product 10",
+      price: 29.99,
+      photoPath: "assets/images/sneaker.png",
+    ),
   ];
 
   @override
@@ -63,37 +80,35 @@ class _HomeScreenState extends State<HomeScreen> {
         title: "Shoppee",
         onSearch: (String query) {},
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            width: double.infinity,
-            height: 150,
-            color: const Color.fromARGB(255, 72, 96, 107),
-            child: const Center(
-              child: Text(
-                'Promotion',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          const SliverToBoxAdapter(
+             child: CarouselSliderWidget(),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GridView.builder(
-                gridDelegate:
-                    const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                itemCount: products.length,
-                itemBuilder: (context, index) {
-                  return ProductItem(
-                    product: products[index],
+          SliverPadding(
+            padding: const EdgeInsets.all(8.0),
+            sliver: SliverGrid(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ProductDetailsPage(product: products[index]),
+                        ),
+                      );
+                    },
+                    child: ProductItem(
+                      product: products[index],
+                    ),
                   );
                 },
+                childCount: products.length,
               ),
             ),
           ),

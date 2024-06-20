@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
 import 'package:onlineshopping/utils/ColorToken.dart';
@@ -18,12 +19,17 @@ class SearchBox extends StatefulWidget {
 
 class _SearchBoxState extends State<SearchBox> {
   final TextEditingController _controller = TextEditingController();
+  final FirebaseAuth _authService = FirebaseAuth.instance;
 
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
+
+   Future<void> _signOut() async {
+    await _authService.signOut();
+   }
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +61,8 @@ class _SearchBoxState extends State<SearchBox> {
                 ),
               ),
               IconButton(
-                icon: const Icon(Icons.filter_alt),
-                onPressed: () {
-                  _controller.clear();
-                  widget.onSearch('');
-                },
+                icon: const Icon(Icons.signpost_outlined),
+                onPressed: _signOut,
               ),
             ],
           ),

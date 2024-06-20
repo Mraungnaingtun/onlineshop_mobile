@@ -62,27 +62,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _userInfo() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Hello, ${_displayName}!'),
-          Text('Email: $_email'),
-          ElevatedButton(
-            onPressed: () async {
-              await _authService.signOut();
-              setState(() {
-                _user = null;
-              });
-            },
-            child: const Text('Sign Out'),
-          ),
-        ],
-      ),
-    );
-  }
-
   Future<void> _signInWithGoogle() async {
       try {
         final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();

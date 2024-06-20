@@ -30,7 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    
     return Scaffold(
       backgroundColor: $token.color.surface.resolve(context),
       body: _screens[_selectedIndex],

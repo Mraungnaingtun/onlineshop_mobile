@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
-import 'package:onlineshopping/model/Product.dart';
 import 'package:onlineshopping/provider/ProductProvider.dart';
 import 'package:onlineshopping/utils/ColorToken.dart';
 import 'package:provider/provider.dart';
@@ -12,52 +11,6 @@ class ProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productProvider = Provider.of<ProductProvider>(context);
-
-    // Only set products if the list is empty to avoid resetting on every build
-    if (productProvider.products.isEmpty) {
-      productProvider.setProducts([
-        Product(
-          id: 1,
-          name: 'Product 1',
-          description: 'This is a great product.',
-          price: 19.99,
-          imageUrl: 'assets/images/b1.png',
-          color: const Color(0xFFed4d6e),
-        ),
-        Product(
-          id: 2,
-          name: 'Product 2',
-          description: 'This is a great product.',
-          price: 20.99,
-          imageUrl: 'assets/images/b2.png',
-          color: const Color(0xFF26678f),
-        ),
-        Product(
-          id: 3,
-          name: 'Product 3',
-          description: 'This is a great product.',
-          price: 20.99,
-          imageUrl: 'assets/images/b3.png',
-          color: const Color(0xFF984d54),
-        ),
-        Product(
-          id: 4,
-          name: 'Product 4',
-          description: 'This is a great product.',
-          price: 20.99,
-          imageUrl: 'assets/images/b4.png',
-          color: const Color(0xFFd987ad),
-        ),
-         Product(
-          id: 5,
-          name: 'Product 5',
-          description: 'This is a great product.',
-          price: 20.99,
-          imageUrl: 'assets/images/b5.png',
-          color: const Color(0xFF2f3653),
-        ),
-      ]);
-    }
 
     return Expanded(
       child: GridView.builder(

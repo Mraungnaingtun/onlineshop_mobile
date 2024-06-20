@@ -24,14 +24,14 @@ class CarouselSliderWidget extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       margin: const EdgeInsets.symmetric(horizontal: 5.0),
                       decoration: const BoxDecoration(
-                        color:  Color.fromARGB(255, 72, 96, 107),
+                        color: Colors.white,
                       ),
                       child: Center(
                         child: Text(
                           'Promotion Page $i',
                           style: const TextStyle(
                             fontSize: 16.0,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),

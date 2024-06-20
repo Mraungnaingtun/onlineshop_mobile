@@ -13,12 +13,12 @@ class ProductItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            product.photoPath,
-            height: 120,
-            width: double.infinity,
-            fit: BoxFit.contain,
-          ),
+          // Image.asset(
+          //   product.,
+          //   height: 120,
+          //   width: double.infinity,
+          //   fit: BoxFit.contain,
+          // ),
           Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: Text(

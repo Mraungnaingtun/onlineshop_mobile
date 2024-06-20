@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "107446514128",
+    "project_id": "shoppee-8c502",
+    "storage_bucket": "shoppee-8c502.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107446514128:android:3ac942d7f0a1414ac9c9d5",
+        "android_client_info": {
+          "package_name": "com.example.onlineshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107446514128-tsactdjoe8dmnqhgqf3fc4vofmuqla7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-amZwX2UPFLTjBCrG0-NjTSo4fu3zs9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107446514128-tsactdjoe8dmnqhgqf3fc4vofmuqla7v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "107446514128-u5avk81gv7ml9ulce5k39dg66gdd5f6r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.onlineshopping"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

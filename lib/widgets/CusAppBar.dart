@@ -1,33 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:onlineshopping/widgets/CustomSearchDelegate.dart';
 
-class CusAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CusAppBar extends StatelessWidget {
   final String title;
-  final Function(String) onSearch;
-
-  const CusAppBar({super.key, required this.title, required this.onSearch});
+  const CusAppBar({
+    super.key,
+    required this.title
+  });
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Row(
-        children: [
-          Text(title),
-          const Spacer(),
-          IconButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: CustomSearchDelegate(onSearch: onSearch),
-              );
-            },
-            icon: const Icon(Icons.search),
-          )
-        ],
+    return Container(
+      height: 60.0,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0), // Add padding
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween, // Align content
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18.0, // Adjust font size
+                color: Colors.white, // White text for dark background
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

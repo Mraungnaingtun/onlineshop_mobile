@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:mix/mix.dart';
-import 'package:onlineshopping/provider/ProductProvider.dart';
-import 'package:onlineshopping/utils/ColorToken.dart';
+import 'package:onlineshopping/provider/user_provider.dart';
+import 'package:onlineshopping/utils/color_token.dart';
 import 'package:provider/provider.dart';
 
 class ProductDetailsPage extends StatelessWidget {
@@ -12,8 +12,8 @@ class ProductDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productProvider = Provider.of<ProductProvider>(context);
-    final product = productProvider.getProductById(productId);
+    final productProvider = Provider.of<UserProvider>(context);
+    final product = productProvider.getProduct(productId);
     final Size size = MediaQuery.of(context).size;
 
     if (product == null) {
@@ -33,18 +33,19 @@ class ProductDetailsPage extends StatelessWidget {
         backgroundColor: product.color,
         elevation: 0,
         leading: IconButton(
-          iconSize: 0.0,
-          icon: SvgPicture.asset('assets/icons/back3.svg'),
+          iconSize: 24.0,
+          icon: const Icon(CupertinoIcons.arrow_left),
+          color: Colors.white,
           onPressed: () => Navigator.pop(context),
         ),
         actions: <Widget>[
           IconButton(
-            icon: SvgPicture.asset("assets/icons/search.svg"),
+            icon: const Icon(CupertinoIcons.search),
             color: Colors.white,
             onPressed: () {},
           ),
           IconButton(
-            icon: SvgPicture.asset("assets/icons/cart.svg"),
+            icon: const Icon(CupertinoIcons.cart),
             color: Colors.white,
             onPressed: () {},
           ),

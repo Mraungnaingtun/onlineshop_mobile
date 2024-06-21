@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
-import 'package:onlineshopping/utils/ColorToken.dart';
+import 'package:onlineshopping/utils/color_token.dart';
 
 class SearchBox extends StatefulWidget {
   final String hintText;
@@ -36,7 +36,7 @@ class _SearchBoxState extends State<SearchBox> {
     return Box(
       style: Style(
         $box.borderRadius.all(8),
-        $box.margin.top(30),
+        // $box.margin.top(30),
         $box.padding.all(20),
       ),
       child: Box(

@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
 import 'package:onlineshopping/firebase_options.dart';
-import 'package:onlineshopping/provider/ProductProvider.dart';
-import 'package:onlineshopping/screens/SplashScreen.dart';
+import 'package:onlineshopping/provider/user_provider.dart';
+import 'package:onlineshopping/screens/splash_screen.dart';
 import 'package:onlineshopping/utils/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => ProductProvider()),
+          ChangeNotifierProvider(create: (_) => UserProvider()),
         ],
         child: MixTheme(
           data: lightBlueTheme,

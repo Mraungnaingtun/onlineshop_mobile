@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
-import 'package:onlineshopping/provider/ProductProvider.dart';
-import 'package:onlineshopping/utils/ColorToken.dart';
+import 'package:onlineshopping/provider/user_provider.dart';
+import 'package:onlineshopping/utils/color_token.dart';
 import 'package:provider/provider.dart';
 import '../../screens/product_details.dart';
 
@@ -10,7 +10,7 @@ class ProductList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productProvider = Provider.of<ProductProvider>(context);
+    final productProvider = Provider.of<UserProvider>(context);
 
     return Expanded(
       child: GridView.builder(

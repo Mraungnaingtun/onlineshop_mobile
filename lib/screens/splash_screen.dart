@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlineshopping/screens/HomeScreen.dart';
-import 'package:onlineshopping/screens/login/LoginPage.dart';
+import 'package:onlineshopping/screens/home_screen.dart';
+import 'package:onlineshopping/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatelessWidget {

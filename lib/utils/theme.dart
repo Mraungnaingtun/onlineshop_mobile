@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mix/mix.dart';
-import 'package:onlineshopping/utils/ColorToken.dart';
+import 'package:onlineshopping/utils/color_token.dart';
 
 
 final lightBlueTheme = MixThemeData(
@@ -28,7 +28,7 @@ final lightBlueTheme = MixThemeData(
     ),
     $token.textStyle.body: GoogleFonts.plusJakartaSans(
       fontSize: 16,
-      fontWeight: FontWeight.normal,
+      fontWeight: FontWeight.w400,
     ),
     $token.textStyle.callout: GoogleFonts.plusJakartaSans(
       fontSize: 14,

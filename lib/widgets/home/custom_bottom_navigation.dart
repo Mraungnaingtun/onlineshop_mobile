@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
-import 'package:onlineshopping/model/CustomBottomNavItem.dart';
-import 'package:onlineshopping/utils/ColorToken.dart';
+import 'package:onlineshopping/utils/color_token.dart';
+import 'package:onlineshopping/widgets/home/bottom_navigation_item.dart';
 
 class CustomBottomNavigation extends StatelessWidget {
   final int currentIndex;
@@ -18,14 +18,12 @@ class CustomBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 55.0,
+      height: 58.0,
       child: Box(
         style: Style(
-           $box.borderRadius.all(30.0),
-          $box.border(
-            width: 0.1,
-            style: BorderStyle.solid,
-            strokeAlign: 0.1)),
+            $box.borderRadius(12, 12, 0, 0),
+            $box.border(
+                width: 0.01, style: BorderStyle.solid, strokeAlign: 0.01)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: items.asMap().entries.map((entry) {
@@ -36,12 +34,25 @@ class CustomBottomNavigation extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    item.icon,
-                    size: 28.0,
-                    color: currentIndex == index
-                        ? $token.color.primary.resolve(context)
-                        : Colors.grey,
+                  SizedBox(
+                    width: 74.0,
+                    child: Icon(
+                      currentIndex == index
+                          ? item.filledIcon
+                          : item.outlinedIcon,
+                      color: currentIndex == index
+                          ? $token.color.primary.resolve(context)
+                          : Colors.grey,
+                      size: 24.0,
+                    ),
+                  ),
+                   Text(
+                   item.title,
+                    style: TextStyle(
+                     color: currentIndex == index
+                          ? $token.color.primary.resolve(context)
+                          : Colors.grey,
+                    ),
                   ),
                 ],
               ),
